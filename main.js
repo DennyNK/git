@@ -25,7 +25,7 @@ let game = {
     speed: 1,
     movingMultiplier: 4,
     fireBallMultiplier: 5,
-    fireInterval: 500,
+    fireInterval: 200,
     bugSpawnInterval: 1000,
     bugKillBonus: 1000
 };
