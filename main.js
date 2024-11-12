@@ -86,6 +86,13 @@ function gameAction(timestamp) {
     if (timestamp - scene.lastBugSpawn > game.bugSpawnInterval + 5000 * Math.random()) {
         let bug = document.createElement('div');
         bug.classList.add('bug');
+
+        let bugImages = ['imgs/netanyahu.png', 'imgs/kopeika.png', 'imgs/trump.png'];
+        let randomBugImage = bugImages[Math.floor(Math.random() * bugImages.length)];
+
+        bug.style.backgroundImage = `url(${randomBugImage})`;
+        bug.style.backgroundSize = 'cover'; 
+
         bug.x = gameAreaEl.offsetWidth - 60;
         bug.style.left = bug.x + 'px';
         bug.style.top = (gameAreaEl.offsetHeight - 60) * Math.random() + 'px';
@@ -127,7 +134,7 @@ function gameAction(timestamp) {
     if (keys.ArrowUp && player.y > 0) {
         player.y -= game.speed * game.movingMultiplier;
     }
-    if (keys.ArrowDown) {
+    if (keys.ArrowDown && player.y + player.height < gameAreaEl.offsetHeight) {
         player.y += game.speed * game.movingMultiplier;
     }
     if (keys.ArrowLeft && player.x > 0) {
@@ -204,6 +211,8 @@ function restartGame(){
     player.x = 150;
     player.y = 150;
     player.lastFireballFiredTime = 0;
+    game.speed = 1;
+    bugSpawnInterval = 1000;
 
     document.querySelectorAll('.bug, .fire-ball').forEach(el => el.remove());
 

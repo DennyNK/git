@@ -15,11 +15,11 @@ body {
 
 .game-area::before{
         content: '';
-        background-image: url(imgs/solarpunk.jpeg);
+        background-image: url(imgs/revolution.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        opacity: 0.4;
+        opacity: 0.7;
         position: absolute;
         top: 0;
         left: 0;
@@ -30,12 +30,18 @@ body {
     
 }
 
+.game-section{
+    text-align: center;
+    background-color: black;
+    color: blueviolet;
+}
+
 .game-start {
     position: absolute;
     width: 30%;
     background-color: aliceblue;
     border-radius: 30px;
-    top: 100px;
+    top: 150px;
     left: 35%;
     z-index: 1;
     text-align: center;
@@ -66,6 +72,7 @@ body {
 .heroine-fire{
     background-image: url(./imgs/littleMyFire.png);
     background-size: cover;
+
 }
 
 .fire-ball{
@@ -79,9 +86,7 @@ body {
 .bug {
     position: absolute;
     width: 48px;
-    height: 58px;
-    background-image: url(imgs/kopeika.png);
-    background-size: cover;
+    height: 62px;
 }
 
 .game-over {
