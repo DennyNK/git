@@ -5,11 +5,29 @@ body {
 
 .game-area {
     position: relative;
-    background: rgb(79, 92, 104);
+    /* background: rgb(79, 92, 104); */
     width: 100%;
     height: 88vh;
     margin: 0;
+    overflow: hidden;
 
+}
+
+.game-area::before{
+        content: '';
+        background-image: url(imgs/solarpunk.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.4;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1; 
+        filter: brightness(0.7);
+    
 }
 
 .game-start {
@@ -38,8 +56,8 @@ body {
 .heroine{
     z-index: 100;
     position: absolute;
-    width: 82px;
-    height: 112px;
+    width: 50px;
+    height: 80px;
     background-image: url(./imgs/littleMyNormal.png);
     background-size: cover;
 
@@ -57,3 +75,40 @@ body {
     background-image: url(./imgs/fire-ball.png);
     background-size: cover;
 }
+
+.bug {
+    position: absolute;
+    width: 48px;
+    height: 58px;
+    background-image: url(imgs/kopeika.png);
+    background-size: cover;
+}
+
+.game-over {
+    position: absolute;
+    width: 50%;
+    background-color: crimson;
+    border-radius: 30px;
+    top: 100px;
+    left: 25%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+}
+
+.restart-btn {
+    position:absolute;
+    width: 300px;
+    height: 150px;
+    top: 50vh;
+    left: 50vw;
+    background-color: rgb(44, 168, 87);
+    font-family: consolas;
+    border-radius: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    border: 0;
+}
+
+
