@@ -212,7 +212,7 @@ function restartGame(){
     player.y = 150;
     player.lastFireballFiredTime = 0;
     game.speed = 1;
-    bugSpawnInterval = 1000;
+    game.bugSpawnInterval = 1000;
 
     document.querySelectorAll('.bug, .fire-ball').forEach(el => el.remove());
 
