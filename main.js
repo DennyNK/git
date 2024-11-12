@@ -12,6 +12,8 @@ document.addEventListener('keydown', onKeyDown);
 document.addEventListener('keyup', onKeyUp);
 
 let lastMilestone = 0;
+let isFiring = false;
+
 
 let keys = {};
 let player = {
@@ -57,13 +59,13 @@ function onGameStart() {
 
 function onKeyDown(e) {
     keys[e.code] = true;
-    console.log(keys);
+    // console.log(keys);
 
 };
 
 function onKeyUp(e) {
     keys[e.code] = false;
-    console.log(keys);
+    // console.log(keys);
 
 };
 
@@ -143,14 +145,29 @@ function gameAction(timestamp) {
     if (keys.ArrowRight && player.x + player.width < gameAreaEl.offsetWidth) {
         player.x += game.speed * game.movingMultiplier;
     }
-    if (keys.Space && timestamp - player.lastFireballFiredTime > game.fireInterval) {
+
+    if (keys.Space && !isFiring && timestamp - player.lastFireballFiredTime > game.fireInterval) {
         heroine.classList.add('heroine-fire');
         addFireball(player);
         player.lastFireballFiredTime = timestamp;
-
+        isFiring = true;
     } else {
         heroine.classList.remove('heroine-fire');
     }
+
+    if (!keys.Space) {
+        isFiring = false;
+    }
+
+    
+    // if (keys.Space && timestamp - player.lastFireballFiredTime > game.fireInterval) {
+    //     heroine.classList.add('heroine-fire');
+    //     addFireball(player);
+    //     player.lastFireballFiredTime = timestamp;
+
+    // } else {
+    //     heroine.classList.remove('heroine-fire');
+    // }
 
     heroine.style.top = player.y + 'px';
     heroine.style.left = player.x + 'px';
