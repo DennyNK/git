@@ -1,0 +1,59 @@
+body {
+    font-size: 30px;
+    font-family: consolas;
+}
+
+.game-area {
+    position: relative;
+    background: rgb(79, 92, 104);
+    width: 100%;
+    height: 88vh;
+    margin: 0;
+
+}
+
+.game-start {
+    position: absolute;
+    width: 30%;
+    background-color: aliceblue;
+    border-radius: 30px;
+    top: 100px;
+    left: 35%;
+    z-index: 1;
+    text-align: center;
+    padding: 30px;
+
+}
+
+.game-score{
+    background-color: rgb(41, 42, 53);
+    color:rgb(233, 94, 117);
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.heroine{
+    z-index: 100;
+    position: absolute;
+    width: 82px;
+    height: 112px;
+    background-image: url(./imgs/littleMyNormal.png);
+    background-size: cover;
+
+}
+
+.heroine-fire{
+    background-image: url(./imgs/littleMyFire.png);
+    background-size: cover;
+}
+
+.fire-ball{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: url(./imgs/fire-ball.png);
+    background-size: cover;
+}
